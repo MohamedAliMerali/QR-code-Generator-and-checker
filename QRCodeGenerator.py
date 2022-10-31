@@ -42,7 +42,8 @@ for row_id in range(2, sheet.max_row+1):
     prtc_first_name = sheet.cell(row=row_id, column=2).value
     prtc_last_name = sheet.cell(row=row_id, column=3).value
     prtc_email = sheet.cell(row=row_id, column=4).value
-    json_data[prtc_id] = [0, prtc_first_name, prtc_last_name, prtc_email]
+    json_data[prtc_id] = [prtc_first_name,
+                          prtc_last_name, prtc_email, id_cell, []]
 
     # Data to be encoded
     # data = 'QR Code using make() function'
