@@ -1,6 +1,7 @@
 import json
 import cv2 as cv
 from datetime import datetime
+from time import sleep
 
 # TODO: check if the file exist
 with open("participantes_data.json", "r") as data_file:
@@ -20,6 +21,7 @@ while True:
     if data:
         prtcp_data = data.split("-")
         prtcp_info = json_data.get(prtcp_data[0], 0)
+        # TODO: check if length == 0, raise an exception in case
         if not prtcp_info:
             print('>> PARTICIPANT DO NOT EXIST !!')
             continue
@@ -27,10 +29,11 @@ while True:
         if len(prtcp_info[4]) == 0:
             prtcp_info[4].append(str(datetime.now()))
         elif int(prtcp_info[4][-1].split(" ")[0].split("-")[2]) == datetime.now().day:
-               print(">> PARTICIPANT ALREADY CHECKED IN !!")
+            print(">> PARTICIPANT ALREADY CHECKED IN !!")
         else:
             prtcp_info[4].append(str(datetime.now()))
         print(data)
+        sleep(1)
 
     cv.imshow("QRCODEscanner", img)
     if cv.waitKey(1) == ord("q"):
