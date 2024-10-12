@@ -1,2 +1,2 @@
 # QR-code-Generator-and-checker
-A Script that generates QR Code, send it to it's to the event participants and can check when they come and scan their code...
+This project is designed to streamline event management by generating unique QR codes for participants, sending them their personalized QR codes, and verifying their attendance upon arrival. When a participant arrives at the event, they can simply scan their QR code, which will automatically log their attendance in the system. This tool offers a seamless way to manage event registration and track who attended in real-time.
